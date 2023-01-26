@@ -6695,6 +6695,7 @@ body {
     right: 0;
     margin: 0 auto;
     max-width: 280px;
+    
   }
 
   .profile-pic span {
@@ -6707,3 +6708,31 @@ body {
 }
 
 /*# sourceMappingURL=ready.css.map */
+
+
+.margin-top{
+  margin-top: 5rem;
+}
+.margin-top .cotanier{
+  background-color: white;
+}
+.content.liner-bakcground{
+background-color: #0a99ff;
+  background-image: linear-gradient(180deg, #0a99ff 0%, #ffffff 100%);
+  min-height: 100vh;
+  width: 100%;
+  
+}
+.border-bottomg{
+  border-bottom: #0a99ff 1px solid ;
+}
+.card-container>div{
+  margin: 1rem 1rem;
+}
+
+.left-liner{
+background-color: #0a99ff;
+  background-image: linear-gradient(90deg, #0a99ff 0%, #ffffff 100%);
+  height: 100vh;
+  width: 100%;
+}

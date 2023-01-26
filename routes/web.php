@@ -13,6 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/seller', function () {
+    return view('Seller.index');
+});
+
+Route::get("/seller/myMaterials", function(){
+    return view("Seller.order");
+});
+
+Route::get("/seller/addMaterials", function(){
+    return view("Seller.add");
+});
+
+Route::get('/seller/login', function(){
+    return view("Seller.login");
+});
+
+Route::get("/", function(){
+    return view("Buyer.index");
+});
+
+Route::get("/buyer/login", function(){
+    return view("Buyer.login");
+});
+
+Route::get("/test", function(){
+    return view("Seller.icons");
 });

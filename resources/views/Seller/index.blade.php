@@ -155,18 +155,28 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a href="{{ url('/coffee/') }}">
+                        <a href="{{ url('/') }}">
                             <i class="la la-dashboard"></i>
                             <p>Dashboard</p>
                             {{-- <span class="badge badge-count">5</span> --}}
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ url('/coffee/order') }}">
+                    <li class="nav-item ">
+                        <a href="{{ url('/myMaterials') }}">
                             <i class="la la-table"></i>
-                            <p>My Materials </p>
+                            <p>My Materials</p>
                             {{-- <span class="badge badge-count">14</span> --}}
                         </a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a href="{{ url('/addMaterials') }}">
+                            <i class="la la-diamond"></i>
+                            <p>Add Materials</p>
+                            {{-- <span class="badge badge-count">14</span> --}}
+                        </a>
+                    </li>
+
                     </li>
 
                     </li>
