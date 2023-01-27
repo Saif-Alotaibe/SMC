@@ -25,8 +25,18 @@
 
             </div>
             <nav class="navbar navbar-header navbar-expand-lg justify-content-end ml-5">
-                <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop">Join Us</button>
+                @if(Auth::guard('sellers')->check())
+                    <p>Hello {{Auth::guard('sellers')->user()->name}}</p>
+                    <a href={{route('common.logout')}} class="btn btn-primary">Logout</a>
+                @elseif(Auth::guard('buyers')->check())
+                    <p>Hello {{Auth::guard('buyers')->user()->name}}</p>
+                    <a href={{route('common.logout')}} class="btn btn-primary">Logout</a>
+                @else
+                    <a href={{route('common.login')}} class="btn btn-primary ml-2">Login</a>
+                    <a href={{route('common.register')}} class="btn btn-success">Register</a>
+                @endif
+                <!-- <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop">Join Us</button> -->
             </nav>
         </div>
         <div class="">
