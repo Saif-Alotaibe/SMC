@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Coffe</title>
+    <title>SMC</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css">
@@ -17,8 +17,8 @@
 
 <body>
     <div class="row">
-        <div class="col-6 left-liner">
-
+        <div class="col-6 left-liner d-flex align-items-center justify-content-center">
+            <img src="{{ asset('/img/logo2.svg') }}" alt="" height="30%">
         </div>
         <div class="col-6 d-flex align-items-center justify-content-center ">
             <div class="row">

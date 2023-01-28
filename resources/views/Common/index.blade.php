@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Coffe</title>
+    <title>SMC</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css">
@@ -25,10 +25,12 @@
             </div>
             <nav class="navbar navbar-header navbar-expand-lg justify-content-end ml-5">
                 @if (Auth::guard('sellers')->check())
-                    <p>Hello {{ Auth::guard('sellers')->user()->name }}</p>
+                    <p  class="text-center ml-2 mt-2">Hello, {{ Auth::guard('sellers')->user()->name }}</p>
+                    <a href={{ route('seller.dashboard') }} class="btn btn-success ml-2">Dashboard</a>
                     <a href={{ route('common.logout') }} class="btn btn-primary">Logout</a>
                 @elseif(Auth::guard('buyers')->check())
-                    <p>Hello {{ Auth::guard('buyers')->user()->name }}</p>
+                    <p class="text-center ml-2 mt-2">Hello, {{ Auth::guard('buyers')->user()->name }}</p>
+                    <a href={{ route('buyer.dashboard') }} class="btn btn-success ml-2">Dashboard</a>
                     <a href={{ route('common.logout') }} class="btn btn-primary">Logout</a>
                 @else
                     <a href={{ route('common.login') }} class="btn btn-primary ml-2">Login</a>

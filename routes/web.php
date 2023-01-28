@@ -15,7 +15,7 @@ use App\Http\Controllers\CommonController;
 
 Route::get('/seller', function () {
     return view('Seller.index');
-});
+})->name("seller.dashboard");
 
 Route::get("/seller/myMaterials", function(){
     return view("Seller.order");
@@ -24,6 +24,10 @@ Route::get("/seller/myMaterials", function(){
 Route::get("/seller/addMaterials", function(){
     return view("Seller.add");
 });
+
+Route::get("/buyer", function () {
+    return view("Buyer.index");    
+})->name("buyer.dashboard");
 
 Route::get("/", function(){
     return view("Common.index");
