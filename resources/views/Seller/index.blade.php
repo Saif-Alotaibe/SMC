@@ -162,17 +162,17 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a href="{{ url('/seller/myMaterials') }}">
+                        <a href="{{ url('/seller/myPosts') }}">
                             <i class="la la-table"></i>
-                            <p>My Materials</p>
+                            <p>My posts</p>
                             {{-- <span class="badge badge-count">14</span> --}}
                         </a>
                     </li>
 
                     <li class="nav-item ">
-                        <a href="{{ url('/seller/addMaterials') }}">
+                        <a href="{{ url('/seller/addPost') }}">
                             <i class="la la-diamond"></i>
-                            <p>Add Materials</p>
+                            <p>Add Post</p>
                             {{-- <span class="badge badge-count">14</span> --}}
                         </a>
                     </li>

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CommonController;
+use App\Http\Controllers\SellerController;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,13 +19,11 @@ Route::get('/seller', function () {
     return view('Seller.index');
 })->name("seller.dashboard");
 
-Route::get("/seller/myMaterials", function(){
-    return view("Seller.order");
-});
+Route::get("/seller/myPosts", [SellerController::class, "myPosts"]);
 
-Route::get("/seller/addMaterials", function(){
-    return view("Seller.add");
-});
+Route::get("/seller/addPost", [SellerController::class, "addPost"]);
+
+Route::post("/post/add", [PostController::class, "add"])->name("post.add");
 
 Route::get("/buyer", function () {
     return view("Buyer.index");    
