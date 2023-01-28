@@ -124,7 +124,7 @@ $(".mapcontainer").mapael({
 				// 	tooltip: {content: "<b>Morbihan</b> <br /> Bretagne"}
 				// },
 				"ID": {
-					tooltip: {content: "<b>Indonesia</b> <br /> Tempat Lahir Beta"},
+					tooltip: {content: "<b>Saudi</b> <br /> Tempat Lahir Beta"},
 					attrs: {
 						fill: "#59d05d"
 					}
@@ -132,7 +132,7 @@ $(".mapcontainer").mapael({
 						fill: "#59d05d"
 					}
 				},
-				"RU": {
+				"SA": {
 					tooltip: {content: "<b>Russia</b>"},
 					attrs: {
 						fill: "#59d05d"

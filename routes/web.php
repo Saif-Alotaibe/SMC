@@ -37,6 +37,20 @@ Route::get("/buyer/login", function(){
     return view("Buyer.login");
 });
 
+Route::get('/buyer/category/{id}', function(){
+    return view("Buyer.categories");
+});
+
+Route::get('/buyer/posts/{id}', function(){
+    return view("Buyer.posts");
+});
+
+
+Route::get('/buyer/post/{id}', function(){
+    return view("Buyer.post");
+});
+
+
 Route::get("/test", function(){
     return view("Seller.icons");
 });

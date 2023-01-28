@@ -17,14 +17,13 @@
 
 <body>
     <div class="wrapper">
-        <div class="main-header">
+        <div class="main-header d-flex justify-content-between align-items-center p-1">
             <div class="logo-header">
                 <a href="index.html" class="logo">
                     <img src="{{ asset('/img/logo.svg') }}" alt="">
                 </a>
-
             </div>
-            <nav class="navbar navbar-header navbar-expand-lg justify-content-end ml-5">
+            <nav class="">
                 <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal"
                     data-bs-target="#staticBackdrop">Join Us</button>
             </nav>
@@ -74,7 +73,7 @@
                 <div class="row">
                     <h2 class="border-bottomg">Catgories</h2>
                     <div class=" d-flex flex-wrap card-container">
-                        <div class="card col-4" style="width: 22rem;">
+                        <div class="card col-md-4 col-sm-12" style="width: 22rem;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -83,7 +82,7 @@
                                 <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
-                        <div class="card col-4" style="width: 22rem;">
+                        <div class="card col-md-4 col-sm-12" style="width: 22rem;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -92,7 +91,7 @@
                                 <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
-                        <div class="card col-4" style="width: 22rem;">
+                        <div class="card col-md-4 col-sm-12" style="width: 22rem;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -101,7 +100,7 @@
                                 <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
-                        <div class="card col-4" style="width: 22rem;">
+                        <div class="card col-md-4 col-sm-12" style="width: 22rem;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -110,7 +109,7 @@
                                 <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
-                        <div class="card col-4" style="width: 22rem;">
+                        <div class="card col-md-4 col-sm-12" style="width: 22rem;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -125,7 +124,7 @@
                 <div class="row mt-3">
                     <h2 class="border-bottomg">Recent Posts</h2>
                     <div class=" d-flex flex-wrap card-container">
-                        <div class="card col-4" style="width: 22rem;">
+                        <div class="card col-md-4 col-sm-12" style="width: 22rem;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -134,7 +133,7 @@
                                 <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
-                        <div class="card col-4" style="width: 22rem;">
+                        <div class="card col-md-4 col-sm-12" style="width: 22rem;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -143,7 +142,7 @@
                                 <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
-                        <div class="card col-4" style="width: 22rem;">
+                        <div class="card col-md-4 col-sm-12" style="width: 22rem;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -152,7 +151,7 @@
                                 <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
-                        <div class="card col-4" style="width: 22rem;">
+                        <div class="card col-md-4 col-sm-12" style="width: 22rem;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
@@ -161,7 +160,7 @@
                                 <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
-                        <div class="card col-4" style="width: 22rem;">
+                        <div class="card col-md-4 col-sm-12" style="width: 22rem;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>

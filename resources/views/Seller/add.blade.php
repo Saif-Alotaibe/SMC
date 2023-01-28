@@ -160,14 +160,14 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item ">
-                        <a href="{{ url('/') }}">
+                        <a href="{{ url('/seller') }}">
                             <i class="la la-dashboard"></i>
                             <p>Dashboard</p>
                             {{-- <span class="badge badge-count">5</span> --}}
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a href="{{ url('/myMaterials') }}">
+                        <a href="{{ url('/seller/myMaterials') }}">
                             <i class="la la-table"></i>
                             <p>My Materials</p>
                             {{-- <span class="badge badge-count">14</span> --}}

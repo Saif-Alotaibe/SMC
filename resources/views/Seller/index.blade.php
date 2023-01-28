@@ -16,14 +16,14 @@
         <div class="main-header">
             <div class="logo-header">
                 <a href="index.html" class="logo">
-                    Dashboard
+                    <img src="{{ asset('/img/logo.svg') }}" alt="">
                 </a>
 
             </div>
             <nav class="navbar navbar-header navbar-expand-lg">
                 <div class="container-fluid">
 
-                    <form class="navbar-left navbar-form nav-search mr-md-3" action="">
+                    {{-- <form class="navbar-left navbar-form nav-search mr-md-3" action="">
                         <div class="input-group">
                             <input type="text" placeholder="بحث ..." class="form-control">
                             <div class="input-group-append">
@@ -32,8 +32,8 @@
                                 </span>
                             </div>
                         </div>
-                    </form>
-                    <ul class="navbar-nav topbar-nav mr-md-auto align-items-center">
+                    </form> --}}
+                    {{-- <ul class="navbar-nav topbar-nav mr-md-auto align-items-center">
                         <li class="nav-item dropdown hidden-caret">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -134,7 +134,7 @@
                             </ul>
                             <!-- /.dropdown-user -->
                         </li>
-                    </ul>
+                    </ul> --}}
                 </div>
             </nav>
         </div>
@@ -162,7 +162,7 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a href="{{ url('/myMaterials') }}">
+                        <a href="{{ url('/seller/myMaterials') }}">
                             <i class="la la-table"></i>
                             <p>My Materials</p>
                             {{-- <span class="badge badge-count">14</span> --}}
@@ -170,7 +170,7 @@
                     </li>
 
                     <li class="nav-item ">
-                        <a href="{{ url('/addMaterials') }}">
+                        <a href="{{ url('/seller/addMaterials') }}">
                             <i class="la la-diamond"></i>
                             <p>Add Materials</p>
                             {{-- <span class="badge badge-count">14</span> --}}
@@ -200,7 +200,7 @@
                                         </div>
                                         <div class="col-7 d-flex align-items-center">
                                             <div class="numbers">
-                                                <p class="card-category">الزوار</p>
+                                                <p class="card-category">Visitors</p>
                                                 <h4 class="card-title">1,294</h4>
                                             </div>
                                         </div>
@@ -219,8 +219,8 @@
                                         </div>
                                         <div class="col-7 d-flex align-items-center">
                                             <div class="numbers">
-                                                <p class="card-category">الطلبات</p>
-                                                <h4 class="card-title">$ 1,345</h4>
+                                                <p class="card-category">Orders</p>
+                                                <h4 class="card-title">SR 1,345</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -238,7 +238,7 @@
                                         </div>
                                         <div class="col-7 d-flex align-items-center">
                                             <div class="numbers">
-                                                <p class="card-category">الاشتراكات</p>
+                                                <p class="card-category">Subscriptions</p>
                                                 <h4 class="card-title">1303</h4>
                                             </div>
                                         </div>
@@ -346,8 +346,8 @@
                             <div class="col-md-3">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">الاهداف</h4>
-                                        <p class="card-category">صافي الربح ١٠٠٠٠</p>
+                                        <h4 class="card-title">Goals</h4>
+                                        <p class="card-category">1000 Profit</p>
                                     </div>
                                     <div class="card-body">
                                         <div id="task-complete" class="chart-circle mt-4 mb-3"></div>
@@ -374,7 +374,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row row-card-no-pd">
+                        {{-- <div class="row row-card-no-pd">
                             <div class="col-md-4">
                                 <div class="card">
                                     <div class="card-body">
@@ -481,7 +481,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div>
                 </div>
