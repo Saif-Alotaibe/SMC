@@ -24,17 +24,32 @@
             <div class="row">
                 <h1>Login</h1>
                 <span style="color: gray">Welcome back !</span>
+                @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                @endif
                 <div class="border-bottom mt-2 mb-2"> </div>
-                <form action="">
+                <form method="post" action="{{route('common.login')}}">
+                    @csrf
+                <label for="type">Login as</label>
+                    <select id="type" name="type" class="form-select" required>
+                        <option value="Seller" selected>Seller</option>
+                        <option value="Buyer">Buyer</option>
+                    </select>
                     <div class="form-floating mb-3 mt-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <input type="email" class="form-control" id="email" name="email" required>
                         <label for="floatingInput">Email address</label>
                     </div>
                     <div class="form-floating">
-                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <input type="password" class="form-control" id="password" name="password" required>
                         <label for="floatingPassword">Password</label>
                     </div>
-                    <div class="btn btn-primary col-12 mt-3">Submit</div>
+                    <button class="btn btn-primary col-12 mt-3" type="submit">Submit</button>
                 </form>
             </div>
         </div>
@@ -43,16 +58,6 @@
 <script src="{{ asset('js/core/jquery.3.2.1.min.js') }}"></script>
 <script src="{{ asset('js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('js/core/popper.min.js') }}"></script>
-<script src="{{ asset('js/plugin/chartist/chartist.min.js') }}"></script>
-<script src="{{ asset('js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js') }}"></script>
-<script src="{{ asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
-<script src="{{ asset('js/plugin/bootstrap-toggle/bootstrap-toggle.min.js') }}"></script>
-<script src="{{ asset('js/plugin/jquery-mapael/jquery.mapael.min.js') }}"></script>
-<script src="{{ asset('js/plugin/jquery-mapael/maps/world_countries.min.js') }}"></script>
-<script src="{{ asset('js/plugin/chart-circle/circles.min.js') }}"></script>
-<script src="{{ asset('js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
-<script src="{{ asset('js/ready.min.js') }}"></script>
-<script src="{{ asset('js/demo.js') }}"></script>
 <script src="https://cdn.rtlcss.com/bootstrap/v4.0.0/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">

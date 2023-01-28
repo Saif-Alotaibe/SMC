@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CommonController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,17 +25,23 @@ Route::get("/seller/addMaterials", function(){
     return view("Seller.add");
 });
 
-Route::get('/seller/login', function(){
-    return view("Seller.login");
-});
-
 Route::get("/", function(){
-    return view("Buyer.index");
-});
+    return view("Common.index");
+})->name('common.index');
 
-Route::get("/buyer/login", function(){
-    return view("Buyer.login");
-});
+Route::get("/register", function () {
+    return view("Common.register");
+})->name("common.register");
+
+Route::get("/login", function () {
+    return view("Common.login");
+})->name("common.login");
+
+Route::post("/register", [CommonController::class, 'register']);
+
+Route::post("/login", [CommonController::class, 'login']);
+
+Route::get("/logout", [CommonController::class, 'logout'])->name("common.logout");
 
 Route::get('/buyer/category/{id}', function(){
     return view("Buyer.categories");
