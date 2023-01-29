@@ -28,23 +28,71 @@
 
             </nav>
         </div>
-        <div class="content d-flex align-items-center" style="min-height: 100vh">
-            <div class="container">
-                <h1>Glass</h1>
-                <div class="border-bottom"></div>
-                <div class="d-flex flex-wrap card-container">
-                    @for ($i = 0; $i < 6; $i++)
-                        <div class="card col-md-4 col-sm-12" style="width: 22rem;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up
-                                    the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="sidebar">
+            <div class="scrollbar-inner sidebar-wrapper">
+                <div class="user">
+                    <div class="photo">
+                        <img src="{{ asset('img/profile.jpg') }}">
+                    </div>
+                    <div class="info">
+                        <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                            <span>
+                                Sultan
+                            </span>
+                        </a>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item ">
+                        <a href="{{ url('/buyer') }}">
+                            <i class="la la-dashboard"></i>
+                            <p>Dashboard</p>
+                            {{-- <span class="badge badge-count">5</span> --}}
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="{{ url('/buyer/categories') }}">
+                            <i class="la la-table"></i>
+                            <p>categories</p>
+                            {{-- <span class="badge badge-count">14</span> --}}
+                        </a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a href="{{ url('/buyer/posts') }}">
+                            <i class="la la-diamond"></i>
+                            <p>Posts</p>
+                            {{-- <span class="badge badge-count">14</span> --}}
+                        </a>
+                    </li>
+
+                    </li>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <div class="content d-flex align-items-center" style="min-height: 100vh">
+                <div class="container">
+                    <h1>Posts</h1>
+                    <div class="border-bottom"></div>
+                    <div class="d-flex flex-wrap card-container">
+                        @for ($i = 0; $i < 6; $i++)
+                            <div class="card col-md-4 col-sm-12" style="width: 22rem; ">
+                                <img src="https://via.placeholder.com/150x100 " class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the
+                                        bulk of the card's content.</p>
+                                    <a href="/buyer/post/1" class="btn btn-primary">Go somewhere</a>
+                                </div>
                             </div>
-                        </div>
-                    @endfor
+                        @endfor
+                    </div>
                 </div>
             </div>
         </div>
@@ -76,7 +124,7 @@
 <script src="{{ asset('js/core/popper.min.js') }}"></script>
 <script src="{{ asset('js/plugin/chartist/chartist.min.js') }}"></script>
 <script src="{{ asset('js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js') }}"></script>
-<script src="{{ asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
+{{-- <script src="{{ asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script> --}}
 <script src="{{ asset('js/plugin/bootstrap-toggle/bootstrap-toggle.min.js') }}"></script>
 <script src="{{ asset('js/plugin/jquery-mapael/jquery.mapael.min.js') }}"></script>
 <script src="{{ asset('js/plugin/jquery-mapael/maps/world_countries.min.js') }}"></script>

@@ -6566,6 +6566,9 @@ body {
   .row-card-no-pd .card:last-child {
     border-bottom-width: 0px;
   }
+                                .index-img img {
+                                  display: none !important;
+                                }
 }
 @media screen and (min-width: 992px) {
   .main-header .logo-header {
@@ -6579,6 +6582,7 @@ body {
   .sidebar:hover .scroll-element {
     opacity: 1;
   }
+
 }
 @media screen and (max-width: 991px) {
   .sidebar {
@@ -6709,6 +6713,9 @@ body {
 
 /*# sourceMappingURL=ready.css.map */
 
+a{
+  text-decoration: none !important;
+}
 
 .margin-top{
   margin-top: 5rem;
@@ -6727,7 +6734,7 @@ background-color: #0a99ff;
   border-bottom: #0a99ff 1px solid ;
 }
 .card-container>div{
-  margin: 1rem 1rem;
+  margin: 1rem .3rem;
 }
 
 .left-liner{

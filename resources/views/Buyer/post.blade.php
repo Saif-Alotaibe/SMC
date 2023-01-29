@@ -30,45 +30,40 @@
         </div>
         <div class="content d-flex align-items-center" style="min-height: 100vh">
             <div class="container">
-                <h1>Glass</h1>
-                <div class="border-bottom"></div>
-                <div class="d-flex flex-wrap card-container">
-                    @for ($i = 0; $i < 6; $i++)
-                        <div class="card col-md-4 col-sm-12" style="width: 22rem;">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up
-                                    the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    @endfor
-                </div>
-            </div>
-        </div>
+                <h2><a href="/buyer/posts"> <i class="la la-angle-left"></i> </a></h2>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 mt-5">
+                        <img src="https://via.placeholder.com/450 " alt="">
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <h3>Title</h3>
+                        <div class="border-bottom mt-3"></div>
+                        <h5 class="mt-4"> <i class="la la-map-pin" style="color: #0A99FF"></i> Riyadh</h5>
+                        <h5 class="mt-4"><i class="la la-money" style="color: #0A99FF"></i> 212 SR <span
+                                class="mr-4" style="color: #0A99FF"> Negotiable
+                                price</span></h5>
+                        <h5 class="mt-4 p-2 use col-2 text-center"
+                            style="border: #0A99FF 1px solid ; border-radius:.5rem">
+                            New</h5>
+                        <div class="border-bottom"></div>
+                        <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ea officia
+                            doloremque
+                            nostrum nisi eos voluptas libero accusantium quaerat iusto veniam atque, magnam ad optio
+                            mollitia, ratione cum quos! Voluptatem.</p>
 
-
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body text-center">
-                        <img src="{{ asset('/img/logo2.svg') }}" alt="">
-                        <img src="{{ asset('/img/login.svg') }}" alt="" width="300px" class="mt-1">
-                        <h3 class="text-center mt-4">Login with us</h3>
-                        <div class="d-flex justify-content-evenly" style="margin-top: 2rem">
-                            <div class="btn btn-primary"> <a href="/buyer/login"
-                                    style="color:white; text-decoration: none;">Seller</a> </div>
-                            <div class="btn btn-primary">
-                                <a href="/buyer/login" style="color:white; text-decoration: none;">Buyer</a>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="btn btn-primary"> Contact </div>
                             </div>
+                            <div class="col-6"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+
     </div>
 </body>
 <script src="{{ asset('js/core/jquery.3.2.1.min.js') }}"></script>
@@ -76,7 +71,7 @@
 <script src="{{ asset('js/core/popper.min.js') }}"></script>
 <script src="{{ asset('js/plugin/chartist/chartist.min.js') }}"></script>
 <script src="{{ asset('js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js') }}"></script>
-<script src="{{ asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
+{{-- <script src="{{ asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script> --}}
 <script src="{{ asset('js/plugin/bootstrap-toggle/bootstrap-toggle.min.js') }}"></script>
 <script src="{{ asset('js/plugin/jquery-mapael/jquery.mapael.min.js') }}"></script>
 <script src="{{ asset('js/plugin/jquery-mapael/maps/world_countries.min.js') }}"></script>

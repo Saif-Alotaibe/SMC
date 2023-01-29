@@ -25,9 +25,27 @@ Route::get("/seller/addMaterials", function(){
     return view("Seller.add");
 });
 
+// buyer routs
 Route::get("/buyer", function () {
     return view("Buyer.index");    
 })->name("buyer.dashboard");
+
+Route::get('/buyer/categories', function () {
+    return view("Buyer.categories");
+});
+Route::get('/buyer/category/{id}', function(){
+    return view("Buyer.category");
+});
+
+Route::get('/buyer/posts', function () {
+    return view("Buyer.posts");
+});
+
+
+Route::get('/buyer/post/{id}', function(){
+    return view("Buyer.post");
+});
+
 
 Route::get("/", function(){
     return view("Common.index");
@@ -47,18 +65,6 @@ Route::post("/login", [CommonController::class, 'login']);
 
 Route::get("/logout", [CommonController::class, 'logout'])->name("common.logout");
 
-Route::get('/buyer/category/{id}', function(){
-    return view("common.categories");
-});
-
-Route::get('/buyer/posts/{id}', function(){
-    return view("common.posts");
-});
-
-
-Route::get('/buyer/post/{id}', function(){
-    return view("common.post");
-});
 
 
 Route::get("/test", function(){

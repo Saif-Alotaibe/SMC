@@ -28,34 +28,70 @@
 
             </nav>
         </div>
-        <div class="content d-flex align-items-center" style="min-height: 100vh">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                        <img src="https://via.placeholder.com/450 " alt="">
+        <div class="sidebar">
+            <div class="scrollbar-inner sidebar-wrapper">
+                <div class="user">
+                    <div class="photo">
+                        <img src="{{ asset('img/profile.jpg') }}">
                     </div>
-                    <div class="col-md-6 col-sm-12">
-                        <h3>Title</h3>
-                        <div class="border-bottom mt-3"></div>
-                        <h5 class="mt-4"> <i class="la la-map-pin" style="color: #0A99FF"></i> Riyadh</h5>
-                        <h5 class="mt-4"><i class="la la-money" style="color: #0A99FF"></i> 212 SR <span
-                                class="mr-4" style="color: #0A99FF"> Negotiable
-                                price</span></h5>
-                        <h5 class="mt-4 p-2 use col-2 text-center"
-                            style="border: #0A99FF 1px solid ; border-radius:.5rem">
-                            New</h5>
-                        <div class="border-bottom"></div>
-                        <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ea officia
-                            doloremque
-                            nostrum nisi eos voluptas libero accusantium quaerat iusto veniam atque, magnam ad optio
-                            mollitia, ratione cum quos! Voluptatem.</p>
+                    <div class="info">
+                        <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                            <span>
+                                Sultan
+                            </span>
+                        </a>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item ">
+                        <a href="{{ url('/buyer') }}">
+                            <i class="la la-dashboard"></i>
+                            <p>Dashboard</p>
+                            {{-- <span class="badge badge-count">5</span> --}}
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="{{ url('/buyer/categories') }}">
+                            <i class="la la-table"></i>
+                            <p>categories</p>
+                            {{-- <span class="badge badge-count">14</span> --}}
+                        </a>
+                    </li>
 
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="btn btn-primary"> Contact </div>
+                    <li class="nav-item ">
+                        <a href="{{ url('/buyer/posts') }}">
+                            <i class="la la-diamond"></i>
+                            <p>Posts</p>
+                            {{-- <span class="badge badge-count">14</span> --}}
+                        </a>
+                    </li>
+
+                    </li>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="main-panel">
+            <div class="content d-flex align-items-center" style="min-height: 100vh">
+                <div class="container">
+                    <h1>Glass</h1>
+                    <div class="border-bottom"></div>
+                    <div class="d-flex flex-wrap card-container">
+                        @for ($i = 0; $i < 6; $i++)
+                            <div class="card col-md-4 col-sm-12" style="width: 22rem; ">
+                                <img src="https://via.placeholder.com/150x100 " class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the
+                                        bulk of the card's content.</p>
+                                    <a href="/buyer/post/2" class="btn btn-primary">Go somewhere</a>
+                                </div>
                             </div>
-                            <div class="col-6"></div>
-                        </div>
+                        @endfor
                     </div>
                 </div>
             </div>
@@ -88,7 +124,7 @@
 <script src="{{ asset('js/core/popper.min.js') }}"></script>
 <script src="{{ asset('js/plugin/chartist/chartist.min.js') }}"></script>
 <script src="{{ asset('js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js') }}"></script>
-<script src="{{ asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
+{{-- <script src="{{ asset('js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script> --}}
 <script src="{{ asset('js/plugin/bootstrap-toggle/bootstrap-toggle.min.js') }}"></script>
 <script src="{{ asset('js/plugin/jquery-mapael/jquery.mapael.min.js') }}"></script>
 <script src="{{ asset('js/plugin/jquery-mapael/maps/world_countries.min.js') }}"></script>

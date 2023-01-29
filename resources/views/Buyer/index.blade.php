@@ -155,24 +155,24 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a href="{{ url('/') }}">
+                        <a href="{{ url('/buyer') }}">
                             <i class="la la-dashboard"></i>
                             <p>Dashboard</p>
                             {{-- <span class="badge badge-count">5</span> --}}
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a href="{{ url('/seller/myMaterials') }}">
+                        <a href="{{ url('/buyer/categories') }}">
                             <i class="la la-table"></i>
-                            <p>My Materials</p>
+                            <p>categories</p>
                             {{-- <span class="badge badge-count">14</span> --}}
                         </a>
                     </li>
 
                     <li class="nav-item ">
-                        <a href="{{ url('/seller/addMaterials') }}">
+                        <a href="{{ url('/buyer/posts') }}">
                             <i class="la la-diamond"></i>
-                            <p>Add Materials</p>
+                            <p>Posts</p>
                             {{-- <span class="badge badge-count">14</span> --}}
                         </a>
                     </li>
@@ -200,7 +200,7 @@
                                         </div>
                                         <div class="col-7 d-flex align-items-center">
                                             <div class="numbers">
-                                                <p class="card-category">Visitors</p>
+                                                <p class="card-category">Category</p>
                                                 <h4 class="card-title">1,294</h4>
                                             </div>
                                         </div>
@@ -219,8 +219,8 @@
                                         </div>
                                         <div class="col-7 d-flex align-items-center">
                                             <div class="numbers">
-                                                <p class="card-category">Orders</p>
-                                                <h4 class="card-title">SR 1,345</h4>
+                                                <p class="card-category">Posts</p>
+                                                <h4 class="card-title"> 1,345</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -343,7 +343,7 @@
                         </div>
                     </div> --}}
                         <div class="row">
-                            <div class="col-md-3">
+                            {{-- <div class="col-md-3">
                                 <div class="card">
                                     <div class="card-header">
                                         <h4 class="card-title">Goals</h4>
@@ -356,8 +356,8 @@
                                         <div class="legend"><i class="la la-circle text-primary"></i> Completed</div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-9" style="width: 40%">
+                            </div> --}}
+                            <div class="col-md-12" style="width: 40%">
                                 <div class="card">
                                     <div class="card-header">
                                         <h4 class="card-title">World Map</h4>

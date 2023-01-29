@@ -92,7 +92,12 @@ $(".mapcontainer").mapael({
 		name : "world_countries",
 		zoom: {
 			enabled: true,
-			maxLevel: 10
+			maxLevel: 20,
+			init:{
+				level: 20,
+				latitude: 24.774265,
+				longitude: 46.738586
+			}
 		},
 		defaultPlot: {
 			attrs: {
@@ -119,39 +124,12 @@ $(".mapcontainer").mapael({
 		}
 	},
 	areas: {
-				// "department-56": {
-				// 	text: {content: "Morbihan", attrs: {"font-size": 10}},
-				// 	tooltip: {content: "<b>Morbihan</b> <br /> Bretagne"}
-				// },
-				"ID": {
-					tooltip: {content: "<b>Saudi</b> <br /> Tempat Lahir Beta"},
-					attrs: {
-						fill: "#59d05d"
-					}
-					, attrsHover: {
-						fill: "#59d05d"
-					}
+				"department-56": {
+					text: {content: "Morbihan", attrs: {"font-size": 10}},
+					tooltip: {content: "<b>Morbihan</b> <br /> Bretagne"}
 				},
 				"SA": {
-					tooltip: {content: "<b>Russia</b>"},
-					attrs: {
-						fill: "#59d05d"
-					}
-					, attrsHover: {
-						fill: "#59d05d"
-					}					
-				},
-				"US": {
-					tooltip: {content: "<b>United State</b>"},
-					attrs: {
-						fill: "#59d05d"
-					}
-					, attrsHover: {
-						fill: "#59d05d"
-					}					
-				},
-				"AU": {
-					tooltip: {content: "<b>Australia</b>"},
+					tooltip: {content: "<b>Saudi</b>"},
 					attrs: {
 						fill: "#59d05d"
 					}

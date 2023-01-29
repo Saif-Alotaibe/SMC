@@ -17,82 +17,86 @@
 
 <body>
     <div class="wrapper">
-        <div class="main-header d-flex justify-content-between align-items-center p-1">
-            <div class="logo-header d-flex justify-content-between " style="width: 100%">
+        <div class="main-header">
+            <div class="logo-header">
                 <a href="index.html" class="logo">
                     <img src="{{ asset('/img/logo.svg') }}" alt="">
                 </a>
-                <nav class="">
-                    @if (Auth::guard('sellers')->check())
-                        <p class="text-center ml-2 mt-2">Hello, {{ Auth::guard('sellers')->user()->name }}</p>
-                        <a href={{ route('seller.dashboard') }} class="btn btn-success ml-2">Dashboard</a>
-                        <a href={{ route('common.logout') }} class="btn btn-primary">Logout</a>
-                    @elseif(Auth::guard('buyers')->check())
-                        <p class="text-center ml-2 mt-2">Hello, {{ Auth::guard('buyers')->user()->name }}</p>
-                        <a href={{ route('buyer.dashboard') }} class="btn btn-success ml-2">Dashboard</a>
-                        <a href={{ route('common.logout') }} class="btn btn-primary">Logout</a>
-                    @else
-                        <a href={{ route('common.login') }} class="btn btn-primary ml-2">Login</a>
-                        <a href={{ route('common.register') }} class="btn btn-success">Register</a>
-                    @endif
-                    <!-- <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop">Join Us</button> -->
-                </nav>
-            </div>
 
+            </div>
+            <nav class="navbar navbar-header navbar-expand-lg justify-content-end ml-5">
+
+            </nav>
         </div>
-        <div class="">
-            <div class="content liner-bakcground ">
-                <div class="container "
-                    style="height:85vh; padding-top:3rem; display:flex; justify-content: space-around; align-items: center;">
-                    <div class="index-img">
-                        <img src="/img/hero.svg" alt="">
+        <div class="sidebar">
+            <div class="scrollbar-inner sidebar-wrapper">
+                <div class="user">
+                    <div class="photo">
+                        <img src="{{ asset('img/profile.jpg') }}">
                     </div>
-                    <div class="row text-center justify-content-center">
-                        <div class="col-md-6 col-sm-12 ">
-                            <img src="/img/logo2.svg" alt="">
-                        </div>
-                        <div class="col-md-7 col-sm-12">
-                            <h4> Make your garbage your <span style="color: #0A99FF"> advantage. </span></h4>
-                        </div>
-
+                    <div class="info">
+                        <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+                            <span>
+                                Sultan
+                            </span>
+                        </a>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
+                <ul class="nav">
+                    <li class="nav-item ">
+                        <a href="{{ url('/buyer') }}">
+                            <i class="la la-dashboard"></i>
+                            <p>Dashboard</p>
+                            {{-- <span class="badge badge-count">5</span> --}}
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="{{ url('/buyer/categories') }}">
+                            <i class="la la-table"></i>
+                            <p>categories</p>
+                            {{-- <span class="badge badge-count">14</span> --}}
+                        </a>
+                    </li>
+
+                    <li class="nav-item ">
+                        <a href="{{ url('/buyer/posts') }}">
+                            <i class="la la-diamond"></i>
+                            <p>Posts</p>
+                            {{-- <span class="badge badge-count">14</span> --}}
+                        </a>
+                    </li>
+
+                    </li>
+
+                    </li>
+
+                </ul>
             </div>
-            <div class="container">
-                <div class="row mt-1">
-                    <div class="col-12 text-center">
-                        <img src="{{ asset('/img/section.svg') }}" alt="">
-                    </div>
-                </div>
-                <div class="row justify-content-center align-items-center" style="margin-top: 8rem">
-                    <div class="col-md-6 col-sm-12">
-                        <h1 class="text-center">
-                            Negotiable <span style="color: #0A99FF">Price</span>!
-                        </h1>
-                        <h4 class="text-center mt-5">Material price can be negotiable based on seller
-                        </h4>
-                    </div>
-                    <div class="col-md-6 index-img">
-                        <img src="{{ asset('/img/price.svg') }}" alt="">
-                    </div>
-                </div>
-
-            </div>
-
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-
-                <div class="col-md-4 d-flex align-items-center">
-                    <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
-                        <svg class="bi" width="30" height="24">
-                            <use xlink:href="#bootstrap"></use>
-                        </svg>
-                    </a>
-                    <span class="mb-3 mb-md-0 text-muted">© 2023 SMC</span>
-                </div>
-
-            </footer>
         </div>
+        <div class="main-panel">
+            <div class="content d-flex align-items-center" style="min-height: 100vh">
+                <div class="container">
+                    <h1>Categories</h1>
+                    <div class="border-bottom"></div>
+                    <div class="d-flex flex-wrap card-container">
+                        @for ($i = 0; $i < 6; $i++)
+                            <div class="card col-md-4 col-sm-12" style="width: 22rem; ">
+                                <img src="https://via.placeholder.com/150x100 " class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the
+                                        bulk of the card's content.</p>
+                                    <a href="/buyer/category/2" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
