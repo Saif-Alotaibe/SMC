@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\{Post, City, Category, Photo};
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -34,7 +35,30 @@ class PostController extends Controller
         $post = $post->save();
        
 
-        return redirect("/seller/myMaterials");
+        return redirect("/seller/myPosts");
 
+    }
+
+    public function update(Request $request){
+        $post = DB::table('posts')->where('id', $request->id)->update([
+            "title" => $request->title,
+             'description' =>  $request->description,
+             "price" => number_format($request->price, 2),
+             "is_negotiable" => $request->is_negotiable === "on",
+             "is_new" => $request->is_new === 'New',
+             "location_details" => $request->location_details,
+             "seller_id" => Auth::guard('sellers')->user()->id,
+             "city_id" => $request->city,
+             "category_id" => $request->category
+
+        ]);
+        // TODO: handle photos
+        return redirect("/seller/myPosts");
+ 
+    }
+
+    public function delete(Request $request){
+        $res = Post::where("id", $request->id)->delete();
+        return redirect("/seller/myPosts");
     }
 }
