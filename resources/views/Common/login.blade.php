@@ -17,26 +17,26 @@
 
 <body>
     <div class="row">
-        <div class="col-6 left-liner d-flex align-items-center justify-content-center">
+        <div class="col-md-6 register-logo left-liner d-flex align-items-center justify-content-center">
             <img src="{{ asset('/img/logo2.svg') }}" alt="" height="30%">
         </div>
-        <div class="col-6 d-flex align-items-center justify-content-center ">
+        <div class="col-md-6 col-sm-12 mt-3 d-flex align-items-center justify-content-center ">
             <div class="row">
                 <h1>Login</h1>
                 <span style="color: gray">Welcome back !</span>
                 @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
                 @endif
                 <div class="border-bottom mt-2 mb-2"> </div>
-                <form method="post" action="{{route('common.login')}}">
+                <form method="post" action="{{ route('common.login') }}">
                     @csrf
-                <label for="type">Login as</label>
+                    <label for="type">Login as</label>
                     <select id="type" name="type" class="form-select" required>
                         <option value="Seller" selected>Seller</option>
                         <option value="Buyer">Buyer</option>

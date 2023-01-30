@@ -22,7 +22,7 @@
                 <a href="index.html" class="logo">
                     <img src="{{ asset('/img/logo.svg') }}" alt="">
                 </a>
-                <nav class="">
+                <nav class="d-flex align-items-center">
                     @if (Auth::guard('sellers')->check())
                         <p class="text-center ml-2 mt-2">Hello, {{ Auth::guard('sellers')->user()->name }}</p>
                         <a href={{ route('seller.dashboard') }} class="btn btn-success ml-2">Dashboard</a>
@@ -64,6 +64,26 @@
                     <div class="col-12 text-center">
                         <img src="{{ asset('/img/section.svg') }}" alt="">
                     </div>
+                </div>
+                <div class="row justify-content-center align-items-center" style="margin-top: 8rem">
+                    <div class="col-md-6 index-img">
+                        <img src="{{ asset('/img/SMCDes.svg') }}" alt="">
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+
+                        <h1 class="text-center">
+                            <span style="color: #0A99FF">SMC</span>
+                        </h1>
+                        <h5 class=" mt-5">Smart Materials Collector (SMC) is a leading solution for the waste
+                            management which changes the way that waste can be treated in a sustainable and
+                            environmentally conscious way. SMC is the bridge between recyclable materials sellers and
+                            buyers to satisfy the need for materials.
+                            SMC aims to drive the circular economy in Saudi Arabia by broking the barriers of
+                            individuals participation in waste management to accelerate the achievement of Vision 2030
+                            goals.
+                        </h5>
+                    </div>
+
                 </div>
                 <div class="row justify-content-center align-items-center" style="margin-top: 8rem">
                     <div class="col-md-6 col-sm-12">

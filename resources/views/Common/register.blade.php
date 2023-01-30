@@ -17,14 +17,14 @@
 
 <body>
     <div class="row">
-        <div class="col-6 left-liner d-flex align-items-center justify-content-center">
+        <div class="col-6 register-logo left-liner d-flex align-items-center justify-content-center">
             <img src="{{ asset('/img/logo2.svg') }}" alt="" height="30%">
         </div>
-        <div class="col-6 d-flex align-items-center justify-content-center ">
+        <div class="col-md-6 col-sm-12 d-flex align-items-center justify-content-center ">
             <div class="row">
                 <h1>Register</h1>
                 <div class="border-bottom mt-2 mb-2"> </div>
-                <form method="post" action="{{route('common.register')}}">
+                <form method="post" action="{{ route('common.register') }}">
                     @csrf
                     <div class="form-floating mb-3 mt-3">
                         <select id="type" name="type" class="form-select" required>
@@ -46,7 +46,8 @@
                         <label for="password">Password</label>
                     </div>
                     <div class="form-floating">
-                        <input type="tel" class="form-control" id="phoneNumber" name="phone_number" maxLength="12" required>
+                        <input type="tel" class="form-control" id="phoneNumber" name="phone_number" maxLength="12"
+                            required>
                         <small class="form-text text-muted">Ex; 966XXXXXXXXX</small>
                         <label for="phoneNumber">Phone number</label>
                     </div>
