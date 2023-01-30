@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CommonController;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\BuyerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,37 +16,20 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/seller', function () {
-    return view('Seller.index');
-})->name("seller.dashboard");
-
+Route::get('/seller', [SellerController::class, "index"])->name("seller.dashboard");
 Route::get("/seller/myPosts", [SellerController::class, "myPosts"]);
-
 Route::get("/seller/addPost", [SellerController::class, "addPost"]);
 
 Route::post("/post/add", [PostController::class, "add"])->name("post.add");
+Route::post("/post/update", [PostController::class, "update"])->name("post.put");
+Route::post("/post/delete", [PostController::class, "delete"])->name("post.delete");
 
 // buyer routs
-Route::get("/buyer", function () {
-    return view("Buyer.index");    
-})->name("buyer.dashboard");
-
-Route::get('/buyer/categories', function () {
-    return view("Buyer.categories");
-});
-Route::get('/buyer/category/{id}', function(){
-    return view("Buyer.category");
-});
-
-Route::get('/buyer/posts', function () {
-    return view("Buyer.posts");
-});
-
-
-Route::get('/buyer/post/{id}', function(){
-    return view("Buyer.post");
-});
-
+Route::get('/buyer', [BuyerController::class, "index"])->name("buyer.dashboard");
+Route::get('/buyer/categories', [BuyerController::class, "categories"])->name("buyer.categories");
+Route::get('/buyer/category/{id}', [BuyerController::class, "category"])->name("buyer.category");
+Route::get('/buyer/posts', [BuyerController::class, "posts"])->name("buyer.posts");
+Route::get('/buyer/post/{id}', [BuyerController::class, "post"])->name("buyer.post");
 
 Route::get("/", function(){
     return view("Common.index");
