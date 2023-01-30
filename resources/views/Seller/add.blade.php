@@ -20,10 +20,14 @@
     <div class="wrapper">
         <div class="main-header">
             <div class="logo-header">
-                <a href="index.html" class="logo">
+                <a class="logo">
                     <img src="{{ asset('/img/logo.svg') }}" alt="">
                 </a>
-
+                <div class="navbar-toggler ">
+                    <div class="sidenav-toggler">
+                        <i class="la la-bars pt-2" style="font-size: 1.5rem"></i>
+                    </div>
+                </div>
             </div>
             <nav class="navbar navbar-header navbar-expand-lg">
 
@@ -33,7 +37,9 @@
             <div class="scrollbar-inner sidebar-wrapper">
                 <div class="user">
                     <div class="photo">
-                        <img src="{{ asset('img/profile.jpg') }}">
+                        {{-- <img src="{{ asset('img/profile.jpg') }}"> --}}
+                        <i class="la la-user user-logo-i" style="color: gray; font-size:2rem;"></i>
+
                     </div>
                     <div class="info">
                         <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -71,66 +77,76 @@
                     </li>
 
                 </ul>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-4">
+                        <form method="get" action="{{ route('common.logout') }}">
+                            <button type="submit" class="btn btn-primary">
+                                Logout
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="main-panel">
             <div class=" margin-top">
                 <div class="cotanier">
-                    <form method="post" action="{{route('post.add')}}">
+                    <form method="post" action="{{ route('post.add') }}">
                         @csrf
                         <div class="row">
-                        @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                          @endif
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
                             <div class="col-md-6 col-sm-12 p-5">
 
-                                    <h3 style="border-bottom: 1px solid #0A99FF">Add Material</h3>
+                                <h3 style="border-bottom: 1px solid #0A99FF">Add Material</h3>
 
-                                    <select class="form-select mt-2" aria-label="Default select example" name="category" required>
-                                        <option selected>Select a Category</option>
-                                        @foreach($categories as $category)
-                                        <option value={{$category->id}}>{{$category->name}}</option>
-                                        @endforeach
-                                    </select>
+                                <select class="form-select mt-2" aria-label="Default select example" name="category"
+                                    required>
+                                    <option selected>Select a Category</option>
+                                    @foreach ($categories as $category)
+                                        <option value={{ $category->id }}>{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
 
-                                    <div class="form-floating mt-4">
-                                        <input type="text" class="form-control" id="title" placeholder="name@example.com" name="title">
-                                        <label for="title">Title</label>
-                                    </div>
+                                <div class="form-floating mt-4">
+                                    <input type="text" class="form-control" id="title"
+                                        placeholder="name@example.com" name="title">
+                                    <label for="title">Title</label>
+                                </div>
 
-                                    <div class="form-floating mt-4">
-                                        <textarea class="form-control" id="description" style="height: 100px" name="description"></textarea>
-                                        <label for="description">Description</label>
-                                    </div>
+                                <div class="form-floating mt-4">
+                                    <textarea class="form-control" id="description" style="height: 100px" name="description"></textarea>
+                                    <label for="description">Description</label>
+                                </div>
 
-                                    <div class="form-check form-check-inline mr-3 ml-5">
-                                        <input class="form-check-input" type="radio" name="is_new"
-                                            style="position: relative; left: -7px;" id="inlineRadio1"
-                                            value="New">
-                                        <label class="form-check-label" for="inlineRadio1">New</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="is_new"
-                                            style="position: relative; left: -7px;" id="inlineRadio2"
-                                            value="Used">
-                                        <label class="form-check-label" for="inlineRadio2">Used</label>
-                                    </div>
+                                <div class="form-check form-check-inline mr-3 ml-5">
+                                    <input class="form-check-input" type="radio" name="is_new"
+                                        style="position: relative; left: -7px;" id="inlineRadio1" value="New">
+                                    <label class="form-check-label" for="inlineRadio1">New</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="is_new"
+                                        style="position: relative; left: -7px;" id="inlineRadio2" value="Used">
+                                    <label class="form-check-label" for="inlineRadio2">Used</label>
+                                </div>
 
-                                    <div class="input-group mb-3 mt-2">
-                                        <div class="input-group-text">
-                                            <input class="form-check-input mt-0" type="checkbox" name="is_negotiable"
-                                                style="position: relative; left: -7px;"
-                                                aria-label="Checkbox for following text input">
-                                            <span class="mr-3">Negotiable</span>
-                                        </div>
-                                        <input type="number" class="form-control" aria-label="Text input with checkbox" placeholder="Price" name="price" required>
+                                <div class="input-group mb-3 mt-2">
+                                    <div class="input-group-text">
+                                        <input class="form-check-input mt-0" type="checkbox" name="is_negotiable"
+                                            style="position: relative; left: -7px;"
+                                            aria-label="Checkbox for following text input">
+                                        <span class="mr-3">Negotiable</span>
                                     </div>
+                                    <input type="number" class="form-control" aria-label="Text input with checkbox"
+                                        placeholder="Price" name="price" required>
+                                </div>
                             </div>
                             <div class="col-md-6 col-sm-12 p-5">
                                 <div>
@@ -147,16 +163,18 @@
                                 <!-- <div type="button" class="btn btn-primary mt-3" onclick="getUserLocation()">
                                     Get My lcoation
                                 </div> -->
-                                <select class="form-select mt-2" aria-label="Default select example" name="city" required>
-                                        <option selected>Select a City</option>
-                                        @foreach($cities as $city)
-                                        <option value={{$city->id}}>{{$city->name}}</option>
-                                        @endforeach
+                                <select class="form-select mt-2" aria-label="Default select example" name="city"
+                                    required>
+                                    <option selected>Select a City</option>
+                                    @foreach ($cities as $city)
+                                        <option value={{ $city->id }}>{{ $city->name }}</option>
+                                    @endforeach
                                 </select>
 
                                 <div class="form-floating mt-4">
-                                        <input type="text" class="form-control" id="location_details" name="location_details" required>
-                                        <label for="location_details">Location details</label>
+                                    <input type="text" class="form-control" id="location_details"
+                                        name="location_details" required>
+                                    <label for="location_details">Location details</label>
                                 </div>
 
                                 <button type="submit" class="btn btn-primary mr-7 mt-3" style="display:block">
@@ -205,6 +223,7 @@
 <script src="{{ asset('js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js') }}"></script>
 <script src="{{ asset('js/plugin/bootstrap-toggle/bootstrap-toggle.min.js') }}"></script>
 <script src="{{ asset('js/plugin/jquery-mapael/jquery.mapael.min.js') }}"></script>
+<script src="{{ asset('js/ready.min.js') }}"></script>
 <script src="{{ asset('js/plugin/jquery-mapael/maps/world_countries.min.js') }}"></script>
 <script src="{{ asset('js/plugin/chart-circle/circles.min.js') }}"></script>
 <script src="{{ asset('js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>

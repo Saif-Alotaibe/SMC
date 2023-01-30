@@ -14,11 +14,16 @@
 <body>
     <div class="wrapper">
         <div class="main-header">
-            <div class="logo-header">
-                <a href="index.html" class="logo">
+
+            <div class="logo-header ">
+                <a class="logo">
                     <img src="{{ asset('/img/logo.svg') }}" alt="">
                 </a>
-
+                <div class="navbar-toggler ">
+                    <div class="sidenav-toggler">
+                        <i class="la la-bars pt-2" style="font-size: 1.5rem"></i>
+                    </div>
+                </div>
             </div>
             <nav class="navbar navbar-header navbar-expand-lg">
                 <div class="container-fluid">
@@ -142,7 +147,9 @@
             <div class="scrollbar-inner sidebar-wrapper">
                 <div class="user">
                     <div class="photo">
-                        <img src="{{ asset('img/profile.jpg') }}">
+                        {{-- <img src="{{ asset('img/profile.jpg') }}"> --}}
+                        <i class="la la-user user-logo-i" style="color: gray; font-size:2rem;"></i>
+
                     </div>
                     <div class="info">
                         <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -182,6 +189,15 @@
                     </li>
 
                 </ul>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-4">
+                        <form method="get" action="{{ route('common.logout') }}">
+                            <button type="submit" class="btn btn-primary">
+                                Logout
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="main-panel">
@@ -195,13 +211,13 @@
                                     <div class="row">
                                         <div class="col-5">
                                             <div class="icon-big text-center">
-                                                <i class="la la-users"></i>
+                                                <i class="la la-newspaper-o"></i>
                                             </div>
                                         </div>
                                         <div class="col-7 d-flex align-items-center">
                                             <div class="numbers">
-                                                <p class="card-category">Visitors</p>
-                                                <h4 class="card-title">1,294</h4>
+                                                <p class="card-category">My Posts</p>
+                                                <h4 class="card-title">{{ $myNumOfMyPosts }}</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -233,7 +249,7 @@
                                     <div class="row">
                                         <div class="col-5">
                                             <div class="icon-big text-center">
-                                                <i class="la la-newspaper-o"></i>
+                                                <i class="la la-users"></i>
                                             </div>
                                         </div>
                                         <div class="col-7 d-flex align-items-center">

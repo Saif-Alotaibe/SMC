@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Coffe</title>
+    <title>SMC</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css">
@@ -19,10 +19,14 @@
     <div class="wrapper">
         <div class="main-header">
             <div class="logo-header">
-                <a href="index.html" class="logo">
+                <a class="logo">
                     <img src="{{ asset('/img/logo.svg') }}" alt="">
                 </a>
-
+                <div class="navbar-toggler ">
+                    <div class="sidenav-toggler">
+                        <i class="la la-bars pt-2" style="font-size: 1.5rem"></i>
+                    </div>
+                </div>
             </div>
             <nav class="navbar navbar-header navbar-expand-lg">
 
@@ -32,7 +36,8 @@
             <div class="scrollbar-inner sidebar-wrapper">
                 <div class="user">
                     <div class="photo">
-                        <img src="{{ asset('img/profile.jpg') }}">
+                        {{-- <img src="{{ asset('img/profile.jpg') }}"> --}}
+                        <i class="la la-user user-logo-i" style="color: gray; font-size:2rem;"></i>
                     </div>
                     <div class="info">
                         <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -70,6 +75,15 @@
                     </li>
 
                 </ul>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-4">
+                        <form method="get" action="{{ route('common.logout') }}">
+                            <button type="submit" class="btn btn-primary">
+                                Logout
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="main-panel">
@@ -77,28 +91,34 @@
                 <div class="container-fluid">
                     <h4 class="page-title">My posts</h4>
                     <div class="row">
-                    @foreach($posts as $post)
-                        <div class="col-md-3" style="text-align: center">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">{{$post->title}}</h4>
-                                    <p class="card-category"></p>
-                                </div>
-                                <div class="card-body">
-                                    <img width="100px" style="justify-content: center"
-                                        src="{{ asset('/img/coffee1.jpeg') }}" alt="">
-                                        <p class="">{{$post->Description}}</p>
-                                </div>
-                                <div class="card-footer">
-                                    <i class="la la-eyedropper add-order" style="font-size: 1.7rem"
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    </i>
-                                    <i class="la la-eye-slash add-order" style="font-size:1.7rem"></i>
-                                    <i class="la la-trash add-order" style="font-size:1.7rem"></i>
+                        @foreach ($posts as $post)
+                            <div class="col-md-3" style="text-align: center">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">{{ $post->title }}</h4>
+                                        <p class="card-category"></p>
+                                    </div>
+                                    <div class="card-body">
+                                        <img width="100px" style="justify-content: center"
+                                            src="{{ asset('/img/coffee1.jpeg') }}" alt="">
+                                        <p class="mt-2">{{ $post->description }}</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <i class="la la-eyedropper add-order" style="font-size: 1.7rem"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal{{ $post->id }}">
+                                        </i>
+                                        {{-- <i class="la la-eye-slash add-order" style="font-size:1.7rem"></i> --}}
+                                        <form method="POST" action="{{ route('post.delete') }}">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $post->id }}">
+                                            <button type="submit" class="btn" style="padding:0;">
+                                                <i class="la la-trash add-order" style="font-size:1.7rem"></i>
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
 
                     </div>
 
@@ -133,42 +153,101 @@
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fs-5" id="exampleModalLabel">أكسيلسو - كولومبيا</h5>
-                    {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> --}}
-                </div>
-                <div class="modal-body">
-                    <div class="form-floating">
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                            <option selected>الفترات المتاحة</option>
-                            <option value="1">٢ اسبوع</option>
-                            <option value="2">٤ اسابيع</option>
-                            <option value="3">٢ شهور</option>
-                        </select>
-                        <label for="floatingSelect">اختر مدة العقد</label>
+    @foreach ($posts as $post)
+        <div class="modal fade" id="exampleModal{{ $post->id }}" tabindex="-1"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
 
-                        <select class="form-select" style="margin-top: 1rem" id="floatingSelect٢"
-                            aria-label="Floating label select example">
-                            <option selected>الكميات المتاحة</option>
-                            <option value="1">٢٠ كيلو</option>
-                            <option value="2">٣٠ كيلو</option>
-                            <option value="3">٤٠ كيلو</option>
-                        </select>
-                        <label for="floatingSelect٢">اختر الكميه</label>
+                        <h5 class="modal-title fs-5" id="exampleModalLabel">{{ $post->title }}</h5>
                     </div>
-                    <h5 style="margin-top: 1rem">0000SR</h5>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">الغاء</button>
-                    <button type="button" class="btn btn-success">شراء</button>
+                    <div class="modal-body">
+                        <form method="post" action="{{ route('post.put') }}">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $post->id }}">
+
+                            <select class="form-select mt-2 " aria-label="Default select example" name="category"
+                                required>
+                                @foreach ($categories as $category)
+                                    @if ($category->id === $post->category_id)
+                                        <option value={{ $category->id }} selected>{{ $category->name }}</option>
+                                    @else
+                                        <option value={{ $category->id }}>{{ $category->name }}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                            <div class="form-floating mt-4">
+                                <input type="text" class="form-control" id="title"
+                                    placeholder="name@example.com" name="title" value="{{ $post->title }}">
+                                <label for="title">Title</label>
+                            </div>
+                            <div class="form-floating mt-4">
+                                <input type="text" class="form-control" id="title"
+                                    placeholder="name@example.com" name="description"
+                                    value="{{ $post->description }}">
+                                <label for="title">Description</label>
+                            </div>
+                            <div class="form-check form-check-inline mr-3 ml-5">
+                                @if ($post->is_new === 1)
+                                    <input class="form-check-input" type="radio" name="is_new"
+                                        style="position: relative; left: -7px;" id="inlineRadio1" value="New"
+                                        checked>
+                                @else
+                                    <input class="form-check-input" type="radio" name="is_new"
+                                        style="position: relative; left: -7px;" id="inlineRadio1" value="New">
+                                @endif
+                                <label class="form-check-label" for="inlineRadio1">New</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                @if ($post->is_new === 0)
+                                    <input class="form-check-input" type="radio" name="is_new"
+                                        style="position: relative; left: -7px;" id="inlineRadio2" value="Used"
+                                        checked>
+                                @else
+                                    <input class="form-check-input" type="radio" name="is_new"
+                                        style="position: relative; left: -7px;" id="inlineRadio2" value="Used">
+                                @endif
+
+                                <label class="form-check-label" for="inlineRadio2">Used</label>
+                            </div>
+
+                            <div class="input-group mb-3 mt-2">
+                                <div class="input-group-text">
+                                    <input class="form-check-input mt-0" type="checkbox" name="is_negotiable"
+                                        style="position: relative; left: -7px;"
+                                        aria-label="Checkbox for following text input">
+                                    <span class="mr-3">Negotiable</span>
+                                </div>
+                                <input type="number" class="form-control" aria-label="Text input with checkbox"
+                                    placeholder="Price" name="price" value="{{ $post->price }}" required>
+                            </div>
+
+                            <div class="form-floating mt-4">
+                                <input type="text" class="form-control" id="location_details"
+                                    name="location_details" required value="{{ $post->location_details }}">
+                                <label for="location_details">Location details</label>
+                            </div>
+                            <select class="form-select mt-2" aria-label="Default select example" name="city"
+                                required>
+                                @foreach ($cities as $city)
+                                    @if ($city->id === $post->city_id)
+                                        <option value={{ $city->id }} selected>{{ $city->name }}</option>
+                                    @else
+                                        <option value={{ $city->id }}>{{ $city->name }}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Canlse</button>
+                        <button type="submit" class="btn btn-success">Update</button>
+                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </div>
+    @endforeach
 </body>
 <script src="{{ asset('js/core/jquery.3.2.1.min.js') }}"></script>
 <script src="{{ asset('js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
