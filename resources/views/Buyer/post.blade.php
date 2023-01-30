@@ -19,7 +19,7 @@
     <div class="wrapper">
         <div class="main-header">
             <div class="logo-header">
-                <a href="index.html" class="logo">
+                <a href="" class="logo">
                     <img src="{{ asset('/img/logo.svg') }}" alt="">
                 </a>
 
@@ -36,20 +36,30 @@
                         <img src="https://via.placeholder.com/450 " alt="">
                     </div>
                     <div class="col-md-6 col-sm-12">
-                        <h3>Title</h3>
+                        <h3>{{ $post->title }}</h3>
                         <div class="border-bottom mt-3"></div>
-                        <h5 class="mt-4"> <i class="la la-map-pin" style="color: #0A99FF"></i> Riyadh</h5>
-                        <h5 class="mt-4"><i class="la la-money" style="color: #0A99FF"></i> 212 SR <span
-                                class="mr-4" style="color: #0A99FF"> Negotiable
-                                price</span></h5>
+                        <h5 class="mt-4"> <i class="la la-map-pin" style="color: #0A99FF"></i> {{ $city }}
+                        </h5>
+                        <h5 class="mt-4"><i class="la la-money" style="color: #0A99FF"></i> {{ $post->price }} SR
+                            @if ($post->is_negotiable === 1)
+                                <span class="mr-4" style="color: #0A99FF"> Negotiable
+                                    price</span>
+                            @endif
+                        </h5>
+                        <h5 class="mt-4">
+                            <i style="color: #0A99FF" class="la la-calendar"></i>
+                            {{ $post->created_at }}
+                        </h5>
                         <h5 class="mt-4 p-2 use col-2 text-center"
                             style="border: #0A99FF 1px solid ; border-radius:.5rem">
-                            New</h5>
-                        <div class="border-bottom"></div>
-                        <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ea officia
-                            doloremque
-                            nostrum nisi eos voluptas libero accusantium quaerat iusto veniam atque, magnam ad optio
-                            mollitia, ratione cum quos! Voluptatem.</p>
+                            @if ($post->is_new === 1)
+                                New
+                            @else
+                                Used
+                            @endif
+                        </h5>
+                        <h6 class="border-bottom mt-4">Description</h6>
+                        <p class="mt-4">{{ $post->description }}</p>
 
                         <div class="row">
                             <div class="col-6">

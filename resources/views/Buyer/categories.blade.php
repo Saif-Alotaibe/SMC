@@ -22,7 +22,11 @@
                 <a href="index.html" class="logo">
                     <img src="{{ asset('/img/logo.svg') }}" alt="">
                 </a>
-
+                <div class="navbar-toggler ">
+                    <div class="sidenav-toggler">
+                        <i class="la la-bars pt-2" style="font-size: 1.5rem"></i>
+                    </div>
+                </div>
             </div>
             <nav class="navbar navbar-header navbar-expand-lg justify-content-end ml-5">
 
@@ -32,7 +36,9 @@
             <div class="scrollbar-inner sidebar-wrapper">
                 <div class="user">
                     <div class="photo">
-                        <img src="{{ asset('img/profile.jpg') }}">
+                        {{-- <img src="{{ asset('img/profile.jpg') }}"> --}}
+                        <i class="la la-user user-logo-i" style="color: gray; font-size:2rem;"></i>
+
                     </div>
                     <div class="info">
                         <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -80,18 +86,16 @@
                     <h1>Categories</h1>
                     <div class="border-bottom"></div>
                     <div class="d-flex flex-wrap card-container">
-                        @for ($i = 0; $i < 6; $i++)
+                        @foreach ($categories as $category)
                             <div class="card col-md-4 col-sm-12" style="width: 22rem; ">
                                 <img src="https://via.placeholder.com/150x100 " class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the
-                                        bulk of the card's content.</p>
-                                    <a href="/buyer/category/2" class="btn btn-primary">Go somewhere</a>
+                                    <h5 class="card-title">{{ $category->name }}</h5>
+                                    <a href={{ "/buyer/category/$category->id" }} class="btn btn-primary">Go
+                                        to category</a>
                                 </div>
                             </div>
-                        @endfor
+                        @endforeach
                     </div>
                 </div>
             </div>

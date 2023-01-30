@@ -53,17 +53,17 @@
                         </a>
                     </li>
                     <li class="nav-item ">
-                        <a href="{{ url('/seller/myMaterials') }}">
+                        <a href="{{ url('/seller/myPosts') }}">
                             <i class="la la-table"></i>
-                            <p>My Materials</p>
+                            <p>My posts</p>
                             {{-- <span class="badge badge-count">14</span> --}}
                         </a>
                     </li>
 
                     <li class="nav-item active">
-                        <a href="">
+                        <a href="{{ url('/seller/addPost') }}">
                             <i class="la la-diamond"></i>
-                            <p>Add Materials</p>
+                            <p>Add Post</p>
                             {{-- <span class="badge badge-count">14</span> --}}
                         </a>
                     </li>
@@ -74,22 +74,29 @@
             </div>
         </div>
         <div class="main-panel">
-
             <div class=" margin-top">
                 <div class="cotanier">
-                    <form>
+                    <form method="post" action="{{route('post.add')}}">
+                        @csrf
                         <div class="row">
-
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                          @endif
                             <div class="col-md-6 col-sm-12 p-5">
-                                <form>
 
                                     <h3 style="border-bottom: 1px solid #0A99FF">Add Material</h3>
 
                                     <select class="form-select mt-2" aria-label="Default select example" name="category" required>
                                         <option selected>Select a Category</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        @foreach($categories as $category)
+                                        <option value={{$category->id}}>{{$category->name}}</option>
+                                        @endforeach
                                     </select>
 
                                     <div class="form-floating mt-4">
@@ -117,16 +124,13 @@
 
                                     <div class="input-group mb-3 mt-2">
                                         <div class="input-group-text">
-                                            <input class="form-check-input mt-0" type="checkbox" value="is_negotiable" name="is_negotiable"
+                                            <input class="form-check-input mt-0" type="checkbox" name="is_negotiable"
                                                 style="position: relative; left: -7px;"
                                                 aria-label="Checkbox for following text input">
                                             <span class="mr-3">Negotiable</span>
                                         </div>
-                                        <input type="number" class="form-control" aria-label="Text input with checkbox" placeholder="Price">
+                                        <input type="number" class="form-control" aria-label="Text input with checkbox" placeholder="Price" name="price" required>
                                     </div>
-
-
-                                </form>
                             </div>
                             <div class="col-md-6 col-sm-12 p-5">
                                 <div>
@@ -145,19 +149,19 @@
                                 </div> -->
                                 <select class="form-select mt-2" aria-label="Default select example" name="city" required>
                                         <option selected>Select a City</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
+                                        @foreach($cities as $city)
+                                        <option value={{$city->id}}>{{$city->name}}</option>
+                                        @endforeach
                                 </select>
 
                                 <div class="form-floating mt-4">
-                                        <input type="text" class="form-control" id="location_details" name="location_details">
+                                        <input type="text" class="form-control" id="location_details" name="location_details" required>
                                         <label for="location_details">Location details</label>
                                 </div>
 
-                                <div type="submit" class="btn btn-primary mr-7 mt-3" style="display:block">
+                                <button type="submit" class="btn btn-primary mr-7 mt-3" style="display:block">
                                     Submit
-                                </div>
+                                </button>
 
                             </div>
                         </div>
