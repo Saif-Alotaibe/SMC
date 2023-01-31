@@ -24,7 +24,7 @@ class PostController extends Controller
         $post = new Post;
         $post->title = $request->title;
         $post->description = $request->description;
-        $post->price = number_format($request->price, 2);
+        $post->price = number_format($request->price, 2, ".", "");
         $post->is_negotiable = $request->is_negotiable === "on";
         $post->is_new = $request->is_new === 'New';
         $post->location_details = $request->location_details;
