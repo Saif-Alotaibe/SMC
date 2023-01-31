@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 use App\Models\Seller;
 use App\Models\Buyer;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redis;
 
 class CommonController extends Controller
 {
     public function login(Request $request)
     {
+        Redis::set("email", $request->email);
         $isSeller = $request->type === 'Seller';
         if($isSeller){
             $credentials = $request->validate([
