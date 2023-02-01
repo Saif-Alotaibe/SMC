@@ -151,7 +151,7 @@
                             <div class="col-md-6 col-sm-12 p-5">
                                 <div>
                                     <label for="formFileLg" class="form-label">Material Photo</label>
-                                    <input class="form-control form-control-lg" id="formFileLg" type="file">
+                                    <input class="form-control form-control-lg" id="formFileLg" type="file" name="image">
                                 </div>
                                 <!-- <div id="location">
                                     <iframe
