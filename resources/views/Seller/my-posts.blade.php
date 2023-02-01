@@ -42,7 +42,7 @@
                     <div class="info">
                         <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                             <span>
-                                Sultan
+                                <p class="text-center ml-2 mt-2">{{ Auth::guard('sellers')->user()->name }}</p>
                             </span>
                         </a>
                         <div class="clearfix"></div>
@@ -99,8 +99,19 @@
                                         <p class="card-category"></p>
                                     </div>
                                     <div class="card-body">
-                                        <img width="100px" style="justify-content: center"
-                                            src="{{ asset('/img/coffee1.jpeg') }}" alt="">
+                                        @if ($post->title === 'Glass bottle')
+                                            <img src="{{ asset('/img/glassbottle.jpg') }}" style="height: 10rem"
+                                                class="card-img-top" alt="...">
+                                        @elseif($post->title === 'platic bottle')
+                                            <img src="{{ asset('/img/plastic.avif') }}" style="height: 10rem;"
+                                                class="card-img-top" alt="...">
+                                        @elseif($post->title === '150Kg')
+                                            <img src="{{ asset('/img/bullt.svg') }}"
+                                                style="height: 10rem class="card-img-top" alt="...">
+                                        @else
+                                            <img src="https://via.placeholder.com/150x100 "
+                                                style="height: 10rem class="card-img-top" alt="...">
+                                        @endif
                                         <p class="mt-2">{{ $post->description }}</p>
                                     </div>
                                     <div class="card-footer">

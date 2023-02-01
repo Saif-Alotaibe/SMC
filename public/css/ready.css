@@ -6709,6 +6709,10 @@ body {
         div.register-logo {
           display: none !important;
         }
+
+  .imgSection{
+    max-width: 100%;
+  }
 }
 .plus-order{
   font-size: 2rem;
@@ -6755,3 +6759,4 @@ background-color: #0a99ff;
   padding: .3rem;
   border-radius: 5rem;
 }
+

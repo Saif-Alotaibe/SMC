@@ -19,7 +19,7 @@
     <div class="wrapper">
         <div class="main-header">
             <div class="logo-header">
-                <a href="index.html" class="logo">
+                <a class="logo">
                     <img src="{{ asset('/img/logo.svg') }}" alt="">
                 </a>
                 <div class="navbar-toggler ">
@@ -43,7 +43,7 @@
                     <div class="info">
                         <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                             <span>
-                                Sultan
+                                <p class="text-center ml-2 mt-2">{{ Auth::guard('buyers')->user()->name }}</p>
                             </span>
                         </a>
                         <div class="clearfix"></div>
@@ -78,6 +78,15 @@
                     </li>
 
                 </ul>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-4">
+                        <form method="get" action="{{ route('common.logout') }}">
+                            <button type="submit" class="btn btn-primary">
+                                Logout
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="main-panel">
@@ -88,7 +97,19 @@
                     <div class="d-flex flex-wrap card-container">
                         @foreach ($categoryPosts as $post)
                             <div class="card col-md-4 col-sm-12" style="width: 22rem; ">
-                                <img src="https://via.placeholder.com/150x100 " class="card-img-top" alt="...">
+                                @if ($post->title === 'Glass bottle')
+                                    <img src="{{ asset('/img/glassbottle.jpg') }}" style="height: 15rem"
+                                        class="card-img-top" alt="...">
+                                @elseif($post->title === 'platic bottle')
+                                    <img src="{{ asset('/img/plastic.avif') }}" style="height: 15rem;"
+                                        class="card-img-top" alt="...">
+                                @elseif($post->title === '150Kg')
+                                    <img src="{{ asset('/img/bullt.svg') }}" style="height: 15rem class="card-img-top"
+                                        alt="...">
+                                @else
+                                    <img src="https://via.placeholder.com/150x100 "
+                                        style="height: 15rem class="card-img-top" alt="...">
+                                @endif
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $post->title }}</h5>
                                     <h6 class="mt-2">Price {{ $post->price }}</h6>

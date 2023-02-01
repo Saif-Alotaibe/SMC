@@ -44,7 +44,7 @@
                     <div class="info">
                         <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                             <span>
-                                Sultan
+                                <p class="text-center ml-2 mt-2">{{ Auth::guard('sellers')->user()->name }}</p>
                             </span>
                         </a>
                         <div class="clearfix"></div>
@@ -105,7 +105,7 @@
                             @endif
                             <div class="col-md-6 col-sm-12 p-5">
 
-                                <h3 style="border-bottom: 1px solid #0A99FF">Add Material</h3>
+                                <h3 style="border-bottom: 1px solid #0A99FF">Add Post</h3>
 
                                 <select class="form-select mt-2" aria-label="Default select example" name="category"
                                     required>

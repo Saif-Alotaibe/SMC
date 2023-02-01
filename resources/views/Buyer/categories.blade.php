@@ -19,7 +19,7 @@
     <div class="wrapper">
         <div class="main-header">
             <div class="logo-header">
-                <a href="index.html" class="logo">
+                <a class="logo">
                     <img src="{{ asset('/img/logo.svg') }}" alt="">
                 </a>
                 <div class="navbar-toggler ">
@@ -43,7 +43,8 @@
                     <div class="info">
                         <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                             <span>
-                                Sultan
+                                <p class="text-center ml-2 mt-2">{{ Auth::guard('buyers')->user()->name }}</p>
+
                             </span>
                         </a>
                         <div class="clearfix"></div>
@@ -78,6 +79,15 @@
                     </li>
 
                 </ul>
+                <div class="row justify-content-center mt-5">
+                    <div class="col-4">
+                        <form method="get" action="{{ route('common.logout') }}">
+                            <button type="submit" class="btn btn-primary">
+                                Logout
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="main-panel">
@@ -88,15 +98,26 @@
                     <div class="d-flex flex-wrap card-container">
                         @foreach ($categories as $category)
                             <div class="card col-md-4 col-sm-12" style="width: 22rem; ">
-                                <img src="https://via.placeholder.com/150x100 " class="card-img-top" alt="...">
+                                @if ($category->name === 'Plastic')
+                                    <img src="{{ asset('/img/plastic.avif') }}" style="height: 15rem;"
+                                        class="card-img-top" alt="...">
+                                @elseif($category->name === 'Glass')
+                                    <img src="{{ asset('/img/glass.jpeg') }}" style="height: 15rem" class="card-img-top"
+                                        alt="...">
+                                @else
+                                    <img src="https://via.placeholder.com/320x240 " class="card-img-top" alt="...">
+                                @endif
+
                                 <div class="card-body">
-                                    <h5 class="card-title">{{ $category->name }}</h5>
-                                    <a href={{ "/buyer/category/$category->id" }} class="btn btn-primary">Go
+                                    <h1 class="card-title">{{ $category->name }}</h1>
+                                    <a href={{ "/buyer/category/$category->id" }} class="btn btn-primary mt-4">Go
                                         to category</a>
                                 </div>
                             </div>
                         @endforeach
                     </div>
+
+
                 </div>
             </div>
         </div>

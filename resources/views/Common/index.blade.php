@@ -49,11 +49,21 @@
                         <img src="/img/hero.svg" alt="">
                     </div>
                     <div class="row text-center justify-content-center">
-                        <div class="col-md-6 col-sm-12 ">
+                        <div class="col-md-10 col-sm-12 ">
                             <img src="/img/logo2.svg" alt="">
                         </div>
-                        <div class="col-md-7 col-sm-12">
-                            <h4> Make your garbage your <span style="color: #0A99FF"> advantage. </span></h4>
+                        <div class="col-md-10 col-sm-12" style="color: rgb(59, 59, 59)">
+                            <h5 style="" class="">Smart Materials Collector (SMC) is a leading solution for
+                                the waste
+                                management which changes the way that waste can be treated in a sustainable and
+                                environmentally conscious way. SMC is the bridge between recyclable materials sellers
+                                and
+                                buyers to satisfy the need for materials.
+                                SMC aims to drive the circular economy in Saudi Arabia by broking the barriers of
+                                individuals participation in waste management to accelerate the achievement of Vision
+                                2030
+                                goals.
+                            </h5>
                         </div>
 
                     </div>
@@ -61,36 +71,31 @@
             </div>
             <div class="container">
                 <div class="row mt-1">
-                    <div class="col-12 text-center">
-                        <img src="{{ asset('/img/section.svg') }}" alt="">
+                    <div class="col-12 text-center ">
+                        <img class="imgSection" src="{{ asset('/img/section.svg') }}" alt="">
                     </div>
                 </div>
                 <div class="row justify-content-center align-items-center" style="margin-top: 8rem">
-                    <div class="col-md-6 index-img">
+                    <div class="col-md-6 index-img ">
                         <img src="{{ asset('/img/SMCDes.svg') }}" alt="">
                     </div>
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-6 col-sm-12 text-center">
 
                         <h1 class="text-center">
                             <span style="color: #0A99FF">SMC</span>
                         </h1>
-                        <h5 class=" mt-5">Smart Materials Collector (SMC) is a leading solution for the waste
-                            management which changes the way that waste can be treated in a sustainable and
-                            environmentally conscious way. SMC is the bridge between recyclable materials sellers and
-                            buyers to satisfy the need for materials.
-                            SMC aims to drive the circular economy in Saudi Arabia by broking the barriers of
-                            individuals participation in waste management to accelerate the achievement of Vision 2030
-                            goals.
-                        </h5>
+                        <h3> Make your garbage your <span style="color: #0A99FF"> advantage. </span></h3>
+
+
                     </div>
 
                 </div>
                 <div class="row justify-content-center align-items-center" style="margin-top: 8rem">
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-6 col-sm-12 ">
                         <h1 class="text-center">
                             Negotiable <span style="color: #0A99FF">Price</span>!
                         </h1>
-                        <h4 class="text-center mt-5">Material price can be negotiable based on seller
+                        <h4 class="mt-5">Material price can be negotiable based on seller
                         </h4>
                     </div>
                     <div class="col-md-6 index-img">
