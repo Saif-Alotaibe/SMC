@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\{Post, City, Category, Photo};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -17,11 +18,16 @@ class PostController extends Controller
             'price' => 'required',
             'category' => 'required',
             'city' => 'required',
-            'location_details' => 'required'
+            'location_details' => 'required',
+            "image" => "required"
         ]);
 
-        //dd($request->all());
+        // TODO move them into rabbit mq broker (if we have time)
+        $path = Storage::disk('oss')->put('media', $request->image);
+        $path = Storage::disk('oss')->url($path);
+
         $post = new Post;
+        $photo = new Photo;
         $post->title = $request->title;
         $post->description = $request->description;
         $post->price = number_format($request->price, 2, ".", "");
@@ -31,9 +37,11 @@ class PostController extends Controller
         $post->seller_id = Auth::guard('sellers')->user()->id;
         $post->city_id = $request->city;
         $post->category_id = $request->category;
-        // TODO: handle photos
-        $post = $post->save();
-       
+        $post->save();
+
+        $photo->url = $path;
+        $photo->post_id = $post->id;
+        $photo->save();
 
         return redirect("/seller/myPosts");
 

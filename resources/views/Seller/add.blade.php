@@ -91,7 +91,7 @@
         <div class="main-panel">
             <div class=" margin-top">
                 <div class="cotanier">
-                    <form method="post" action="{{ route('post.add') }}">
+                    <form method="post" action="{{ route('post.add') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             @if ($errors->any())
@@ -151,7 +151,7 @@
                             <div class="col-md-6 col-sm-12 p-5">
                                 <div>
                                     <label for="formFileLg" class="form-label">Material Photo</label>
-                                    <input class="form-control form-control-lg" id="formFileLg" type="file">
+                                    <input class="form-control form-control-lg" id="formFileLg" type="file" name="image">
                                 </div>
                                 <!-- <div id="location">
                                     <iframe
