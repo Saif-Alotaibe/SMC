@@ -14,6 +14,7 @@
 
     <link href="{{ URL::asset('css/ready.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ asset('/css/demo.css') }}">
+    <link rel="icon" type="image/png" href="{{asset('/img/smc-logo.png')}}"/>
 </head>
 
 <body>

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css">
     < <link href="{{ URL::asset('css/ready.css') }}" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="{{ asset('/css/demo.css') }}">
+        <link rel="icon" type="image/png" href="{{asset('/img/smc-logo.png')}}"/>
 </head>
 
 <body>
