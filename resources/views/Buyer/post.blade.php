@@ -33,19 +33,7 @@
                 <h2><a href="/buyer/posts"> <i class="la la-angle-left"></i> </a></h2>
                 <div class="row">
                     <div class="col-md-6 col-sm-12 mt-5">
-                        @if ($post->title === 'Glass bottle')
-                            <img src="{{ asset('/img/glassbottle.jpg') }}" style="height: 15rem"
-                                width="100%   object-fit: contain;" class="card-img-top" alt="...">
-                        @elseif($post->title === 'platic bottle')
-                            <img src="{{ asset('/img/plastic.avif') }}" style="height: 15rem;" class="card-img-top"
-                                alt="...">
-                        @elseif($post->title === '150Kg')
-                            <img src="{{ asset('/img/bullt.svg') }}" style="height: 15rem class="card-img-top"
-                                alt="...">
-                        @else
-                            <img src="https://via.placeholder.com/150x100 " style="height: 15rem class="card-img-top"
-                                alt="...">
-                        @endif
+                        <img src="{{$post->photos->first()->url}}" style="height: 15rem" class="card-img-top" alt="...">
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <h3>{{ $post->title }}</h3>

@@ -99,7 +99,7 @@
                                         <p class="card-category"></p>
                                     </div>
                                     <div class="card-body">
-                                            <img src="{{$post->photos->first()->url}}" style="height: 10rem"
+                                            <img src="{{$post->photos->first()->url}}" style="width: 50%;height: 50%;"
                                                 class="card-img-top" alt="...">
                                         <p class="mt-2">{{ $post->description }}</p>
                                     </div>
