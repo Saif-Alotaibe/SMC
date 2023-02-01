@@ -91,7 +91,7 @@
         <div class="main-panel">
             <div class=" margin-top">
                 <div class="cotanier">
-                    <form method="post" action="{{ route('post.add') }}">
+                    <form method="post" action="{{ route('post.add') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             @if ($errors->any())
