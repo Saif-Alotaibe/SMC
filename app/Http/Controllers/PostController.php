@@ -22,10 +22,6 @@ class PostController extends Controller
             "image" => "required"
         ]);
 
-        // TODO move them into rabbit mq broker (if we have time)
-        $path = Storage::disk('oss')->put('media', $request->image);
-        $path = Storage::disk('oss')->url($path);
-
         $post = new Post;
         $photo = new Photo;
         $post->title = $request->title;
@@ -39,6 +35,9 @@ class PostController extends Controller
         $post->category_id = $request->category;
         $post->save();
 
+        // TODO move them into rabbit mq broker (if we have time)
+        $path = Storage::disk('oss')->put('media/' . $post->id, $request->image);
+        $path = Storage::disk('oss')->url($path);
         $photo->url = $path;
         $photo->post_id = $post->id;
         $photo->save();
