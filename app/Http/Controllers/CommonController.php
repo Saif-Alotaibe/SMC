@@ -13,7 +13,7 @@ class CommonController extends Controller
 {
     public function login(Request $request)
     {
-        Redis::set("email", $request->email);
+        // Redis::set("email", $request->email);
         $isSeller = $request->type === 'Seller';
         if($isSeller){
             $credentials = $request->validate([

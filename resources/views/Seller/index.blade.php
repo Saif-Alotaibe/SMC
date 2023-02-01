@@ -118,13 +118,51 @@
                                     <div class="row">
                                         <div class="col-5">
                                             <div class="icon-big text-center">
-                                                <i class="la la-bar-chart"></i>
+                                                <i class="la la-cart-arrow-down"></i>
                                             </div>
                                         </div>
                                         <div class="col-7 d-flex align-items-center">
                                             <div class="numbers">
                                                 <p class="card-category">Orders</p>
+                                                <h4 class="card-title">3</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card card-stats card-primary">
+                                <div class="card-body ">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <div class="icon-big text-center">
+                                                <i class="la la-bar-chart"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-7 d-flex align-items-center">
+                                            <div class="numbers">
+                                                <p class="card-category">Total Sales</p>
                                                 <h4 class="card-title">SR 1,345</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card card-stats card-light">
+                                <div class="card-body ">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <div class="icon-big text-center">
+                                                <i class="la la-bar-chart"></i>
+                                            </div>
+                                        </div>
+                                        <div class="col-7 d-flex align-items-center">
+                                            <div class="numbers">
+                                                <p class="card-category">Total profit</p>
+                                                <h4 class="card-title">SR 300</h4>
                                             </div>
                                         </div>
                                     </div>
@@ -149,9 +187,7 @@
                             <div class="col-md-12" style="width: 40%">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Saudi Arabia Map</h4>
-                                        <p class="card-category">
-                                            Map of the distribution of users around the Saudi Arabia</p>
+                                        <h4 class="card-title">Orders map</h4>
                                     </div>
                                     <div class="card-body">
                                         <div class="mapcontainer">

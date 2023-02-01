@@ -13,7 +13,8 @@ class BuyerController extends Controller
     public function index(){
         return view('Buyer.index', [
             'numOfPosts' => Post::all()->count(),
-            "numOfCategories" => Category::all()->count()
+            "numOfCategories" => Category::all()->count(),
+            "numOfCities" => City::all()->count()
         ]);
     }
 
