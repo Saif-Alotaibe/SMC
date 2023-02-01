@@ -33,7 +33,7 @@
                 <h2><a href="/buyer/posts"> <i class="la la-angle-left"></i> </a></h2>
                 <div class="row">
                     <div class="col-md-6 col-sm-12 mt-5">
-                        <img src="{{$post->photos->first()->url}}" style="height: 15rem" class="card-img-top" alt="...">
+                        <img src="{{$post->photos->first()->url}}" style="height: 50%; width: 50%;" class="card-img-top" alt="...">
                     </div>
                     <div class="col-md-6 col-sm-12">
                         <h3>{{ $post->title }}</h3>
